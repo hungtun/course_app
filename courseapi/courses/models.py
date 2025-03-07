@@ -5,10 +5,11 @@ from django.db import models
 # Create your models here.
 from django.contrib.auth.models import AbstractUser
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 # việc đâu tiên
 class User(AbstractUser):
-    pass
+    avatar = CloudinaryField()
 
 class BaseModel(models.Model):
     active = models.BooleanField(default=True)
@@ -28,7 +29,7 @@ class Category(BaseModel):
 class Course(BaseModel):
     subject = models.CharField(max_length=100)
     description = models.TextField(null=True)
-    image = models.ImageField(upload_to='courses/%y/%m')
+    image = CloudinaryField()
     category = models.ForeignKey('Category',on_delete=models.PROTECT)
 
     def __str__(self):
@@ -40,7 +41,7 @@ class Course(BaseModel):
 class Lesson(BaseModel):
     subjects = models.CharField(max_length=255)
     content = RichTextField()
-    image = models.ImageField(upload_to='lessons/%y/%m')
+    image = CloudinaryField()
     course = models.ForeignKey('Course', on_delete=models.CASCADE, related_name='lessons')
     tags = models.ManyToManyField('Tag',related_name='lessons')
 
@@ -52,4 +53,16 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+class Interaction(models.Model):
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name='comments')
+    lesson = models.ForeignKey("Lesson", on_delete=models.CASCADE, related_name='comments')
+
+class Comment(models.Model):
+    content = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name='comments')
+    lesson = models.ForeignKey("Lesson", on_delete=models.CASCADE, related_name='comments')
+
+
 

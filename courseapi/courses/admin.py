@@ -4,7 +4,7 @@ from django.db.models import Count
 from django.template.response import TemplateResponse
 from django.urls import path
 
-from .models import Category,Course, Lesson
+from .models import Category,Course, Lesson,Tag,Comment
 from django.utils.html import mark_safe
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
@@ -48,5 +48,7 @@ class CourseAppAdminSite(admin.AdminSite):
 admin_site = CourseAppAdminSite(name='myadmin')
 admin_site.register(Category)
 # admin.site.register(Category)
-# admin_site.register(Course, MyCourseAdmin)
-# admin.site.register(Lesson,MyLessonAdmin)
+admin_site.register(Course)
+admin_site.register(Comment)
+admin_site.register(Tag)
+admin_site.register(Lesson)
