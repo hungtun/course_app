@@ -44,4 +44,34 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = ['content','created_date','update_date','user']
 
+class LessonDetailsSerializer(LessonSerializer):
+    tags = TagSerializer(many=True)
 
+    class Meta:
+        model = LessonSerializer.Meta.model
+        fields = LessonSerializer.Meta.fields + ['content', 'tags']
+        
+class UserSerializer(serializers.ModelSerializer):
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+
+        data['avatar'] = instance.avatar.url if instance.avatar else ''
+
+        return data
+
+    def create(self, validated_data):
+        data = validated_data.copy()
+        u = User(**data)
+        u.set_password(u.password)
+        u.save()
+
+        return u
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'password', 'avatar']
+        extra_kwargs = {
+            'password': {
+                'write_only': True
+            }
+        }

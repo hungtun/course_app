@@ -8,6 +8,7 @@ routes = DefaultRouter()
 routes.register('categories', views.CategoryViewset, basename='category')
 routes.register('courses', views.CourseViewset, basename='course')
 routes.register('lessons', views.LessonViewset, basename='lesson')
+routes.register('users', views.UserViewSet, basename='user')
 
 urlpatterns = [
     path('', include(routes.urls)),
