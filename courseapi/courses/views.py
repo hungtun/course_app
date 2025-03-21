@@ -1,4 +1,4 @@
-from rest_framework import viewsets, generics, status, parsers
+from rest_framework import viewsets, generics, status, parsers, permissions, serializers
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -36,13 +36,47 @@ class LessonViewset(viewsets.ViewSet,generics.RetrieveAPIView):
     queryset = Lesson.objects.prefetch_related().filter(active =True)  # Sửa get() -> all()
     serializer_class = serializer.LessonDetailSerializer
 
-    @action(methods=['get'], detail=True, url_path='comments')
+    def get_permissions(self):
+        if self.action.__eq__('get_comment') and self.request.method.__eq__('POST'):
+            return  [permissions.IsAuthenticated()]
+        return [permissions.AllowAny()]
+
+
+    @action(methods=['get', 'post'], detail=True, url_path='comments')
     def get_comments(self, request, pk):
-        comments = self.get_object().comment_set.select_related('user').filter(active=True)
-        return Response(serializer.CommentSerializer(comments, many=True).data, status=status.HTTP_200_OK)
+        if request.method.__eq__('POST'):
+            u = serializers.CommentSerializer(data = {
+                'content' : request.data.get('content'),
+                'user' : request.user.pk,
+                'lesson' : pk
+            })
+            u.is_valid()
+            c= u.save()
+
+
+        else:
+            comments = self.get_object().comment_set.select_related('user').filter(active=True)
+            return Response(serializer.CommentSerializer(comments, many=True).data, status=status.HTTP_200_OK)
 
 
 class UserViewSet(viewsets.ViewSet, generics.CreateAPIView):
     queryset = User.objects.filter(is_active=True)
     serializer_class = serializer.UserSerializer
     parser_classes = [parsers.MultiPartParser]
+
+    @action(methods=['get', 'patch'], url_path="current-user", detail=False, permission_classes = [permissions.IsAuthenticated])
+    def get_current_user(self, request):
+        if request.method.__eq__("PATCH"):
+            u = request.user
+
+            for key in request.data:
+                if key in ['first_name', 'last_name']:
+                    setattr(u, key , request.data[key])
+                elif key.__eq__('password'):
+                    u.set_password(request.data[key])
+            u.save()
+            return Response(serializers.UserSerializer(u).data)
+        else:
+            return Response(serializer.UserSerializer(request.user).data)
+
+

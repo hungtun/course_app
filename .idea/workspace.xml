@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e03161b-54f6-40c9-b6b1-0e72f01d2d2b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/course_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/course_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/courseapi/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courseapi/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/courseapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courseapi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/courses/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/courses/migrations/0002_comment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courses/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/courses/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courses/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/courses/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courses/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2uc9ZuYK43IEe5wZPpJ8AagSavV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/course_app",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e03161b-54f6-40c9-b6b1-0e72f01d2d2b" name="Changes" comment="" />
+      <created>1742537054517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742537054517</updated>
+    </task>
+    <servers />
+  </component>
+</project>

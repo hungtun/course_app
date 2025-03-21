@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'rest_framework',
     'drf_yasg',
-    'cloudinary'
+    'cloudinary',
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [
@@ -101,7 +102,9 @@ cloudinary.config(
     secure=True
 )
 # ////////////
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('oauth2_provider.contrib.rest_framework.OAuth2Authentication',)
+}
 # kết nối database
 DATABASES = {
     'default': {
@@ -154,3 +157,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+OAUTH2_PROVIDER = { 'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore' }
+
+CLIENT_ID = 'gV6mgeSUHGi3OxCVGViyiCdkCfIYecTuyPSXIEoc'
+CLIENT_SECRET = 'yPy95WAxmhAcPAzBTjHyEfe9iSXJAdbvEt5flkrDf6IjfuWNyN635CPrNjtELGHPooHGY3NbjCKNAoFIGRLqz7dr1gxIYy3KPe6Ygy8JUZFxbUaowBcCOEhhgOX6hs6a'

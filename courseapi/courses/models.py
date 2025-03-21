@@ -59,10 +59,10 @@ class Interaction(BaseModel):
 
 class Comment(Interaction):
     content = models.TextField()
-
-class Like(Interaction):
-    class Meta:
-        unique_together = ('lesson', 'user')
+#
+# class Like(Interaction):
+#     class Meta:
+#         unique_together = ('lesson', 'user')
 
 
 

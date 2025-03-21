@@ -39,10 +39,7 @@ class LessonDetailSerializer(LessonSerializer):
         model = LessonSerializer.Meta.model
         fields = LessonSerializer.Meta.fields + ['content','tags']
 
-class CommentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Comment
-        fields = ['content','created_date','update_date','user']
+
 
 class LessonDetailsSerializer(LessonSerializer):
     tags = TagSerializer(many=True)
@@ -72,6 +69,22 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['first_name', 'last_name', 'username', 'password', 'avatar']
         extra_kwargs = {
             'password': {
+                'write_only': True
+            }
+        }
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['user'] = UserSelializer(instance.user).data
+        return data
+
+    class Meta:
+        model = Comment
+        fields = ['id','content', 'created_date', 'update_date', 'user', 'lesson']
+        extra_kwargs = {
+            'lesson':{
                 'write_only': True
             }
         }
