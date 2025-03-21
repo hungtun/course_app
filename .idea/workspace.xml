@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5e03161b-54f6-40c9-b6b1-0e72f01d2d2b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/course_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/course_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/courseapi/courseapi/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courseapi/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courseapi/courseapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courseapi/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courseapi/courses/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courseapi/courses/migrations/0002_comment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courseapi/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courses/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courseapi/courses/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courses/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courseapi/courses/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/courses/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseapi/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/courseapi/requirement.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,24 +19,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2uc9ZuYK43IEe5wZPpJ8AagSavV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/course_app",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/course_app&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
